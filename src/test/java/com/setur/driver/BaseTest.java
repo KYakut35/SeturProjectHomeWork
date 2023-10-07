@@ -20,6 +20,7 @@ public class BaseTest  {
 
     @BeforeAll
     public static void setup() {
+
         WebDriverManager.chromedriver().setup();
         String baseURL = "https://www.setur.com.tr/";
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -39,8 +40,8 @@ public class BaseTest  {
 
     @AfterAll
     public static void tearDown() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.quit();
+        Thread.sleep(10000);
+        //driver.quit();
         System.out.println("\nTest Scenario Completed.");
     }
 
