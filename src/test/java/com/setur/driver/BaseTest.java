@@ -40,7 +40,7 @@ public class BaseTest  {
 
     @AfterAll
     public static void tearDown() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         //driver.quit();
         System.out.println("\nTest Scenario Completed.");
     }
