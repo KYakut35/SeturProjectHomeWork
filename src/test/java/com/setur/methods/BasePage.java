@@ -3,6 +3,7 @@ package com.setur.methods;
 import com.setur.driver.BaseTest;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,6 +24,8 @@ public class BasePage extends BaseTest {
         logger.info("This element " + locator + " has been scrolled.");
     }
 
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+
     public WebElement findElement(By locator) {
         logger.info(locator + " Element founded.");
         return driver.findElement(locator);
@@ -37,6 +40,7 @@ public class BasePage extends BaseTest {
     public void click(By locator) {
         scrollWithAction(locator);
         findElement(locator).click();
+        js.executeScript("arguments[0].style.border='3px solid yellow'",findElement(locator));
         logger.info("Clicked on this element " + locator + " .");
     }
 
