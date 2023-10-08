@@ -5,10 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchPage extends BasePage {
 
-    public void SearchPage(WebDriver driver) {
+    public SearchPage(WebDriver driver) {
     }
 
-    public boolean checkUrl(String searchWord) {
+    public boolean checkUrl(String searchWord) throws InterruptedException {
+        Thread.sleep(1000);
         if (driver.getCurrentUrl().contains(searchWord)){
             return true;
         }

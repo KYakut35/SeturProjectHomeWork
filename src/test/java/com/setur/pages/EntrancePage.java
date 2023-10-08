@@ -11,7 +11,8 @@ public class EntrancePage extends BasePage {
     public  EntrancePage(WebDriver driver) {
     }
 
-    public void cleanThePageFromPopUps() {
+    public void cleanThePageFromPopUps() throws InterruptedException{
+        Thread.sleep(1000);
         //click(By.xpath("//span[contains(@class,\"close\")]"));
         click(By.xpath("//a[contains(@id,\"ButtonLevelOptinDec\")]"));
         click(By.xpath("//span[contains(@class,\"d0bnog-0 dAkGPW\")]"));
