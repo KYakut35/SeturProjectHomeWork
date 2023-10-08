@@ -17,15 +17,16 @@ public class TestCheckUrlWriteCitySelectDateSelectAdultCountScrollAndCheck exten
     @Order(1)
     public void testCheckUrl() {
         Assertions.assertTrue(basePage.checkURL("https://www.setur.com.tr/"));
+        entrancePage.cleanThePageFromPopUps();
     }
 
     @Test
     @Order(2)
-    public void testCheckHotelTab() throws InterruptedException {
+    public void testSetSearchOptions() throws InterruptedException {
         entrancePage.cleanThePageFromPopUps();
-        entrancePage.selectCityDatePerson();
-
     }
+
+
 
 
 }

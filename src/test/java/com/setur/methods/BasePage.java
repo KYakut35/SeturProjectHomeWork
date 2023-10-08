@@ -39,8 +39,9 @@ public class BasePage extends BaseTest {
 
     public void click(By locator) {
         scrollWithAction(locator);
-        findElement(locator).click();
         js.executeScript("arguments[0].style.border='3px solid yellow'",findElement(locator));
+        findElement(locator).click();
+
         logger.info("Clicked on this element " + locator + " .");
     }
 
