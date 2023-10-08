@@ -16,33 +16,28 @@ public class TestCheckUrlWriteCitySelectDateSelectAdultCountScrollAndCheck exten
     SearchPage searchPage = new SearchPage(driver);
 
     @Test
-    @Order(1)
+    @Order(1) // Task 1 and 2
     public void testCheckUrl() throws InterruptedException {
         Assertions.assertTrue(basePage.checkURL("https://www.setur.com.tr/"));
         entrancePage.cleanThePageFromPopUps();
     }
 
     @Test
-    @Order(2)
+    @Order(2) // Task 3 , 4 , 5 , 6 , 7
     public void testSetSearchOptions() throws InterruptedException {
         entrancePage.selectCityDatePerson();
     }
 
     @Test
-    @Order(3)
+    @Order(3) // Task 8
     public void testCheckNewUrl() throws InterruptedException {
         Assertions.assertTrue(searchPage.checkUrl("Antalya"));
     }
 
     @Test
-    @Order(4)
+    @Order(4) // Task 9 and 10
     public void testCompareSearchResults() throws InterruptedException {
-        Assertions.assertTrue(searchPage.checkUrl("Antalya"));
+        searchPage.compareHotelCount();
     }
-
-
-
-
-
 
 }

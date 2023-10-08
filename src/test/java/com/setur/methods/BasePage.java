@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import java.util.List;
 
-public class BasePage extends BaseTest {
+public class BasePage extends BaseTest { // My default methods for locators
 
     public final static Logger logger = Logger.getLogger(BasePage.class);
 
@@ -37,9 +37,9 @@ public class BasePage extends BaseTest {
         return driver.findElements(locator);
     }
 
-    public void click(By locator) {
+    public void click(By locator) { // Click Function with Extra Point Task
         scrollWithAction(locator);
-        js.executeScript("arguments[0].style.border='3px solid yellow'",findElement(locator));
+        js.executeScript("arguments[0].style.border='3px solid yellow'",findElement(locator)); // Js code for extra point task
         findElement(locator).click();
 
         logger.info("Clicked on this element " + locator + " .");
